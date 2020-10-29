@@ -1,0 +1,10 @@
+# set base image (host OS)
+FROM libcalculadora:1.0
+
+# set the working directory in the container
+WORKDIR .
+
+EXPOSE 8100
+
+# command to run on container start
+CMD [ "node", "soma.js" ]
