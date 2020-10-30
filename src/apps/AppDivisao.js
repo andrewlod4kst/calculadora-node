@@ -1,9 +1,13 @@
 var express = require("express");
+const axios = require('axios')
+const {RouteDivisao} = require("../routes")
 var bodyParser = require("body-parser");
 var app = express();
 
+
+
 app.use(bodyParser.json());
 
-app.post("/", );
+app.use("/",RouteDivisao);
 
-app.listen(8200);
+app.listen(8400);

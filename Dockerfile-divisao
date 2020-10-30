@@ -7,4 +7,4 @@ WORKDIR .
 EXPOSE 8400
 
 # command to run on container start
-CMD [ "node", "divisao.js" ]
+CMD [ "node", "src/apps/AppDivisao.js" ]

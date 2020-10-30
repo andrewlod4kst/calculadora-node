@@ -7,4 +7,4 @@ WORKDIR .
 EXPOSE 8300
 
 # command to run on container start
-CMD [ "node", "multiplicacao.js" ]
+CMD [ "node", "src/apps/AppMultiplicacao.js" ]

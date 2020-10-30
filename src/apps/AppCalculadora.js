@@ -1,10 +1,13 @@
 var express = require("express");
 const axios = require('axios')
+const {RouteCalculadora} = require("../routes")
 var bodyParser = require("body-parser");
 var app = express();
 
+
+
 app.use(bodyParser.json());
 
-app.post("/", );
+app.use("/",RouteCalculadora);
 
-app.listen(8400);
+app.listen(8000);

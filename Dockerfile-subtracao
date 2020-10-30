@@ -7,4 +7,4 @@ WORKDIR .
 EXPOSE 8200
 
 # command to run on container start
-CMD [ "node", "subtracao.js" ]
+CMD [ "node", "src/apps/AppSubtracao.js" ]

@@ -7,4 +7,4 @@ WORKDIR .
 EXPOSE 8100
 
 # command to run on container start
-CMD [ "node", "soma.js" ]
+CMD [ "node", "src/apps/AppSoma.js" ]

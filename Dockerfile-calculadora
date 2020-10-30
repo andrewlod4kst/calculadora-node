@@ -7,4 +7,4 @@ WORKDIR .
 EXPOSE 8000
 
 # command to run on container start
-CMD [ "node", "calculadora.js" ]
+CMD [ "node", "src/apps/AppCalculadora.js" ]
