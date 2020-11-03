@@ -1,3 +1,4 @@
 module.exports = {
-	ValidationNumbers: require("./ValidationNumbers")
+	ValidationNumbers: require("./ValidationNumbers"),
+	ValidationDivision: require("./ValidationDivision")
 }
