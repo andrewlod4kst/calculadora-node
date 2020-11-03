@@ -7,12 +7,12 @@ class ControllerDivisao extends Controller{
 	}
 	
 	divisao(){
-		return async (req,res) => async (req,res) => {
+		return async (req,res) => {
 			var cont = 0;
 			var n1 = req.body.num1;
 			while(n1 >= req.body.num2){
-				response = await axios.post("http://subtracao:8200/", {num1: n1, num2: req.body.num2});
-				result = response.data;
+				var response = await axios.post("http://subtracao:8200/", {num1: n1, num2: req.body.num2});
+				var result = response.data;
 				n1 = result.result;
 				cont += 1;
 			}

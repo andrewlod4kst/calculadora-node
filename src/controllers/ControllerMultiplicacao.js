@@ -7,12 +7,12 @@ class ControllerMultiplicacao extends Controller{
 	}
 	
 	multiplicacao(){
-		return async (req,res) => async (req,res) => {
+		return async (req,res) => {
 			var cont = 0;
 			var acc = 0;
 			while(cont < req.body.num1){
-				response = await axios.post("http://soma:8100/", {num1: acc, num2: req.body.num2});
-				result = response.data;
+				var response = await axios.post("http://soma:8100/", {num1: acc, num2: req.body.num2});
+				var result = response.data;
 				acc = result.result;
 				cont += 1;
 			}

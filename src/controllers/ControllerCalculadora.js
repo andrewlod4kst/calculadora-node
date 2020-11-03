@@ -1,4 +1,5 @@
 const Controller = require("./Controller")
+const axios = require('axios')
 
 class ControllerCalculadora extends Controller{
 	constructor(){
@@ -8,7 +9,7 @@ class ControllerCalculadora extends Controller{
 	soma(){
 		return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			response = await axios.post("http://soma:8100/", req.body);
+			var response = await axios.post("http://soma:8100/", req.body);
 			res.json(response.data);
 		}
 	}
@@ -16,7 +17,7 @@ class ControllerCalculadora extends Controller{
 	sub(){
 		return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			response = await axios.post("http://subtracao:8200/", req.body);
+			var response = await axios.post("http://subtracao:8200/", req.body);
 			res.json(response.data);
 		}
 	}
@@ -24,7 +25,7 @@ class ControllerCalculadora extends Controller{
 	multi(){
 	return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			response = await axios.post("http://multiplicacao:8300/", req.body);
+			var response = await axios.post("http://multiplicacao:8300/", req.body);
 			res.json(response.data);
 		}
 	}
@@ -32,7 +33,7 @@ class ControllerCalculadora extends Controller{
 	div(){
 		return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			response = await axios.post("http://divisao:8400/", req.body);
+			var response = await axios.post("http://divisao:8400/", req.body);
 			res.json(response.data);
 		}
 	}
