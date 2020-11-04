@@ -3,7 +3,8 @@ const axios = require('axios')
 
 class ControllerDivisao extends Controller{
 	constructor(){
-		super()
+		super();
+		this.SUB_IP = process.env.SUB_IP;
 	}
 	
 	divisao(){
@@ -11,7 +12,7 @@ class ControllerDivisao extends Controller{
 			var cont = 0;
 			var n1 = req.body.num1;
 			while(n1 >= req.body.num2){
-				var response = await axios.post("http://subtracao:8200/", {num1: n1, num2: req.body.num2});
+				var response = await axios.post(this.SUB_IP, {num1: n1, num2: req.body.num2});
 				var result = response.data;
 				n1 = result.result;
 				cont += 1;

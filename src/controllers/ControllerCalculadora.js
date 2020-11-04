@@ -3,13 +3,17 @@ const axios = require('axios')
 
 class ControllerCalculadora extends Controller{
 	constructor(){
-		super()
+		super();
+		this.SOMA_IP = process.env.SOMA_IP;
+		this.SUB_IP = process.env.SUB_IP;
+		this.MULTI_IP = process.env.MULTI_IP;
+		this.DIV_IP = process.env.DIV_IP;
 	}
 	
 	soma(){
 		return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			var response = await axios.post("http://soma:8100/", req.body);
+			var response = await axios.post(this.SOMA_IP, req.body);
 			res.json(response.data);
 		}
 	}
@@ -17,7 +21,7 @@ class ControllerCalculadora extends Controller{
 	sub(){
 		return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			var response = await axios.post("http://subtracao:8200/", req.body);
+			var response = await axios.post(this.SUB_IP, req.body);
 			res.json(response.data);
 		}
 	}
@@ -25,7 +29,7 @@ class ControllerCalculadora extends Controller{
 	multi(){
 	return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			var response = await axios.post("http://multiplicacao:8300/", req.body);
+			var response = await axios.post(this.MULTI_IP, req.body);
 			res.json(response.data);
 		}
 	}
@@ -33,7 +37,7 @@ class ControllerCalculadora extends Controller{
 	div(){
 		return async (req,res) => {
 			res.setHeader('Content-Type', 'application/json');
-			var response = await axios.post("http://divisao:8400/", req.body);
+			var response = await axios.post(this.DIV_IP, req.body);
 			res.json(response.data);
 		}
 	}
